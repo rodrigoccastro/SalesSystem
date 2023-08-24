@@ -13,12 +13,8 @@ config server
     3) run the database scripts (script.sql)
     4) change the database access user and password properties in server/config/database.yml
 
-start server
-    run in terminal: 
-        cd server
-        rails server
+start server: open terminal, move to folder server and execute rails server
 
-start client
-    open terminal and run: 
-        cd client
-        ruby home.rb
+config client: set server host and port in view.rb    
+
+start client: open another terminal, move to folder client and execute ruby home.rb
