@@ -1,15 +1,15 @@
 class SaleController < ApplicationController
     
     def index
-    	render json: {status: 'SUCCESS', message:'Loaded sales', data:ServiceSale.new.list()},status: :ok
+    	render json: {status: 'SUCCESS', message:'Loaded sales', data:ServiceSaleList.new.execute()},status: :ok
     end
 
     def show
-        render json: {status: 'SUCCESS', message:'Loaded sale', data:ServiceSale.new.find(params[:id])},status: :ok
+        render json: {status: 'SUCCESS', message:'Loaded sale', data:ServiceSaleFind.new.execute(params[:id])},status: :ok
     end
 
     def create
-        resp = ServiceSale.new.insert(params)
+        resp = ServiceSaleCreate.new.execute(params)
         if resp[:success]
             render json: {status: 'SUCCESS', message:'Saved sale', data:resp[:data]},status: :ok
         else
@@ -18,7 +18,7 @@ class SaleController < ApplicationController
     end
 
     def update
-        resp = ServiceSale.new.update(params)
+        resp = ServiceSaleUpdate.new.execute(params)
         if resp[:success]
             render json: {status: 'SUCCESS', message:'Updated sale', data:resp[:data]},status: :ok
         else

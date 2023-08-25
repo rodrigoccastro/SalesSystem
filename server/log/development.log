@@ -3875,3 +3875,599 @@ Processing by SaleController#index as */*
 Completed 200 OK in 98ms (Views: 0.6ms | ActiveRecord: 16.8ms | Allocations: 23252)
 
 
+Started GET "/product" for ::1 at 2023-08-24 17:39:57 -0300
+Processing by ProductController#index as */*
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 3867)
+
+
+  
+Zeitwerk::NameError (expected file d:/devel/work/ruby/SalesSystem/server/app/service/service_product_list.rb to define constant ServiceProductList, but didn't):
+  
+app/controllers/product_controller.rb:4:in `index'
+Started GET "/product" for ::1 at 2023-08-24 17:42:14 -0300
+Processing by ProductController#index as */*
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY updated DESC[0m
+  ↳ app/controllers/product_controller.rb:4:in `index'
+Completed 200 OK in 50ms (Views: 9.0ms | ActiveRecord: 12.6ms | Allocations: 10523)
+
+
+Started GET "/seller" for ::1 at 2023-08-24 17:42:17 -0300
+Processing by SellerController#index as */*
+  [1m[36mSeller Load (1.3ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" ORDER BY updated DESC[0m
+  ↳ app/controllers/seller_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 6.4ms | ActiveRecord: 4.6ms | Allocations: 5009)
+
+
+Started GET "/client" for ::1 at 2023-08-24 17:42:19 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 4.6ms | ActiveRecord: 4.6ms | Allocations: 3890)
+
+
+Started GET "/sale" for ::1 at 2023-08-24 17:42:21 -0300
+Processing by SaleController#index as */*
+  [1m[36mSale Load (1.6ms)[0m  [1m[34mSELECT "sales".* FROM "sales" ORDER BY updated DESC[0m
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.1ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.1ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (0.9ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 13]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.0ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 12]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.2ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 11]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+Completed 200 OK in 110ms (Views: 0.6ms | ActiveRecord: 18.1ms | Allocations: 23426)
+
+
+Started GET "/product/1" for ::1 at 2023-08-24 17:42:25 -0300
+Processing by ProductController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_product_find.rb:7:in `execute'
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 1052)
+
+
+Started GET "/seller/1" for ::1 at 2023-08-24 17:42:29 -0300
+Processing by SellerController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSeller Load (1.4ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_seller_find.rb:7:in `execute'
+Completed 200 OK in 15ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 998)
+
+
+Started GET "/client/1" for ::1 at 2023-08-24 17:42:34 -0300
+Processing by ClientController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_client_find.rb:7:in `execute'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 998)
+
+
+Started GET "/sale/10" for ::1 at 2023-08-24 17:42:38 -0300
+Processing by SaleController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSale Load (0.9ms)[0m  [1m[34mSELECT "sales".* FROM "sales" WHERE "sales"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:12:in `execute'
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+  [1m[36mSeller Load (1.2ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+  [1m[36mProductsale Load (1.0ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 4.4ms | Allocations: 3935)
+
+
+Started GET "/product" for ::1 at 2023-08-25 08:49:16 -0300
+Processing by ProductController#index as */*
+  [1m[36mProduct Load (4.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY updated DESC[0m
+  ↳ app/controllers/product_controller.rb:4:in `index'
+Completed 200 OK in 165ms (Views: 38.0ms | ActiveRecord: 13.9ms | Allocations: 10670)
+
+
+Started GET "/seller" for ::1 at 2023-08-25 08:49:22 -0300
+Processing by SellerController#index as */*
+  [1m[36mSeller Load (5.2ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" ORDER BY updated DESC[0m
+  ↳ app/controllers/seller_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 5.0ms | ActiveRecord: 8.9ms | Allocations: 5013)
+
+
+Started GET "/client" for ::1 at 2023-08-25 08:49:39 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (5.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 34ms (Views: 5.3ms | ActiveRecord: 8.9ms | Allocations: 3953)
+
+
+Started GET "/sale" for ::1 at 2023-08-25 08:49:44 -0300
+Processing by SaleController#index as */*
+  [1m[36mSale Load (2.5ms)[0m  [1m[34mSELECT "sales".* FROM "sales" ORDER BY updated DESC[0m
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (0.8ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.5ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.0ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 13]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.1ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (0.8ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 12]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.1ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 11]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+Completed 200 OK in 166ms (Views: 0.5ms | ActiveRecord: 20.6ms | Allocations: 23201)
+
+
+Started GET "/product/1" for ::1 at 2023-08-25 08:49:53 -0300
+Processing by ProductController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_product_find.rb:7:in `execute'
+Completed 200 OK in 72ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 3031)
+
+
+Started GET "/seller/1" for ::1 at 2023-08-25 08:50:00 -0300
+Processing by SellerController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSeller Load (1.2ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_seller_find.rb:7:in `execute'
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 1003)
+
+
+Started GET "/client/1" for ::1 at 2023-08-25 08:50:06 -0300
+Processing by ClientController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_client_find.rb:7:in `execute'
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 1002)
+
+
+Started GET "/sale/10" for ::1 at 2023-08-25 08:50:11 -0300
+Processing by SaleController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSale Load (0.7ms)[0m  [1m[34mSELECT "sales".* FROM "sales" WHERE "sales"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:12:in `execute'
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+  [1m[36mSeller Load (1.2ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+  [1m[36mProductsale Load (0.9ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 3834)
+
+
+Started GET "/product" for ::1 at 2023-08-25 08:53:52 -0300
+Processing by ProductController#index as */*
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY updated DESC[0m
+  ↳ app/controllers/product_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1010)
+
+
+Started POST "/product" for ::1 at 2023-08-25 08:54:06 -0300
+Processing by ProductController#create as */*
+  Parameters: {"id"=>"3", "name"=>"product three", "price"=>"333", "product"=>{"id"=>"3", "name"=>"product three", "price"=>"333"}}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_product_create.rb:8:in `execute'
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("id", "name", "price") VALUES ($1, $2, $3) RETURNING "id"[0m  [["id", "3"], ["name", "product three"], ["price", "333.0"]]
+  ↳ app/service/service_product_create.rb:8:in `execute'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_product_create.rb:8:in `execute'
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 4627)
+
+
+Started GET "/product" for ::1 at 2023-08-25 08:54:09 -0300
+Processing by ProductController#index as */*
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY updated DESC[0m
+  ↳ app/controllers/product_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.9ms | Allocations: 1140)
+
+
+Started PUT "/product/3" for ::1 at 2023-08-25 08:54:32 -0300
+Processing by ProductController#update as */*
+  Parameters: {"id"=>"3", "name"=>"product three", "price"=>"333.33", "product"=>{"id"=>"3", "name"=>"product three", "price"=>"333.33"}}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_product_update.rb:7:in `execute'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_product_update.rb:11:in `execute'
+  [1m[36mProduct Update (3.3ms)[0m  [1m[33mUPDATE "products" SET "price" = $1, "updated" = $2 WHERE "products"."id" = $3[0m  [["price", "333.33"], ["updated", "2023-08-25 11:54:32.528283"], ["id", "3"]]
+  ↳ app/service/service_product_update.rb:11:in `execute'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_product_update.rb:11:in `execute'
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 7.4ms | Allocations: 2988)
+
+
+Started GET "/product" for ::1 at 2023-08-25 08:54:34 -0300
+Processing by ProductController#index as */*
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY updated DESC[0m
+  ↳ app/controllers/product_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 1140)
+
+
+Started GET "/seller" for ::1 at 2023-08-25 08:54:40 -0300
+Processing by SellerController#index as */*
+  [1m[36mSeller Load (0.9ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" ORDER BY updated DESC[0m
+  ↳ app/controllers/seller_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1036)
+
+
+Started GET "/seller/1" for ::1 at 2023-08-25 08:54:44 -0300
+Processing by SellerController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSeller Load (0.9ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_seller_find.rb:7:in `execute'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 717)
+
+
+Started POST "/seller" for ::1 at 2023-08-25 08:55:07 -0300
+Processing by SellerController#create as */*
+  Parameters: {"id"=>"3", "name"=>"seller three", "email"=>"email three", "phone"=>"334455", "address"=>"rua 3333", "seller"=>{"id"=>"3", "name"=>"seller three", "email"=>"email three", "phone"=>"334455", "address"=>"rua 3333"}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_seller_create.rb:8:in `execute'
+  [1m[36mSeller Create (1.0ms)[0m  [1m[32mINSERT INTO "sellers" ("id", "name", "email", "phone", "address") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", "3"], ["name", "seller three"], ["email", "email three"], ["phone", "334455"], ["address", "rua 3333"]]
+  ↳ app/service/service_seller_create.rb:8:in `execute'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_seller_create.rb:8:in `execute'
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 4302)
+
+
+Started GET "/seller" for ::1 at 2023-08-25 08:55:11 -0300
+Processing by SellerController#index as */*
+  [1m[36mSeller Load (0.8ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" ORDER BY updated DESC[0m
+  ↳ app/controllers/seller_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 1176)
+
+
+Started PUT "/product/3" for ::1 at 2023-08-25 08:55:44 -0300
+Processing by ProductController#update as */*
+  Parameters: {"id"=>"3", "name"=>"seller three x", "price"=>"444", "product"=>{"id"=>"3", "name"=>"seller three x", "price"=>"444"}}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_product_update.rb:7:in `execute'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_product_update.rb:11:in `execute'
+  [1m[36mProduct Update (1.1ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "price" = $2, "updated" = $3 WHERE "products"."id" = $4[0m  [["name", "seller three x"], ["price", "444.0"], ["updated", "2023-08-25 11:55:44.849291"], ["id", "3"]]
+  ↳ app/service/service_product_update.rb:11:in `execute'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_product_update.rb:11:in `execute'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 7.5ms | Allocations: 2546)
+
+
+Started GET "/product" for ::1 at 2023-08-25 08:55:47 -0300
+Processing by ProductController#index as */*
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY updated DESC[0m
+  ↳ app/controllers/product_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.0ms | Allocations: 1140)
+
+
+Started PUT "/product/3" for ::1 at 2023-08-25 08:56:03 -0300
+Processing by ProductController#update as */*
+  Parameters: {"id"=>"3", "name"=>"product three", "price"=>"333", "product"=>{"id"=>"3", "name"=>"product three", "price"=>"333"}}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_product_update.rb:7:in `execute'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_product_update.rb:11:in `execute'
+  [1m[36mProduct Update (0.8ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "price" = $2, "updated" = $3 WHERE "products"."id" = $4[0m  [["name", "product three"], ["price", "333.0"], ["updated", "2023-08-25 11:56:03.104464"], ["id", "3"]]
+  ↳ app/service/service_product_update.rb:11:in `execute'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_product_update.rb:11:in `execute'
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 7.7ms | Allocations: 2545)
+
+
+Started PUT "/seller/3" for ::1 at 2023-08-25 08:56:27 -0300
+Processing by SellerController#update as */*
+  Parameters: {"id"=>"3", "name"=>"seller name 3", "email"=>"email seller 3", "phone"=>"333-333", "address"=>"calle 333", "seller"=>{"id"=>"3", "name"=>"seller name 3", "email"=>"email seller 3", "phone"=>"333-333", "address"=>"calle 333"}}
+  [1m[36mSeller Load (0.7ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_seller_update.rb:7:in `execute'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_seller_update.rb:11:in `execute'
+  [1m[36mSeller Update (0.8ms)[0m  [1m[33mUPDATE "sellers" SET "name" = $1, "email" = $2, "phone" = $3, "address" = $4, "updated" = $5 WHERE "sellers"."id" = $6[0m  [["name", "seller name 3"], ["email", "email seller 3"], ["phone", "333-333"], ["address", "calle 333"], ["updated", "2023-08-25 11:56:27.377422"], ["id", "3"]]
+  ↳ app/service/service_seller_update.rb:11:in `execute'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_seller_update.rb:11:in `execute'
+Completed 200 OK in 58ms (Views: 0.4ms | ActiveRecord: 4.2ms | Allocations: 4807)
+
+
+Started GET "/seller" for ::1 at 2023-08-25 08:56:30 -0300
+Processing by SellerController#index as */*
+  [1m[36mSeller Load (0.8ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" ORDER BY updated DESC[0m
+  ↳ app/controllers/seller_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 1176)
+
+
+Started GET "/client" for ::1 at 2023-08-25 08:56:35 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1036)
+
+
+Started GET "/client/1" for ::1 at 2023-08-25 08:56:44 -0300
+Processing by ClientController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_client_find.rb:7:in `execute'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 717)
+
+
+Started POST "/client" for ::1 at 2023-08-25 08:56:59 -0300
+Processing by ClientController#create as */*
+  Parameters: {"id"=>"3", "name"=>"client 3", "email"=>"email 3", "phone"=>"345", "address"=>"rua 333", "client"=>{"id"=>"3", "name"=>"client 3", "email"=>"email 3", "phone"=>"345", "address"=>"rua 333"}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_client_create.rb:8:in `execute'
+  [1m[36mClient Create (0.7ms)[0m  [1m[32mINSERT INTO "clients" ("id", "name", "email", "phone", "address") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", "3"], ["name", "client 3"], ["email", "email 3"], ["phone", "345"], ["address", "rua 333"]]
+  ↳ app/service/service_client_create.rb:8:in `execute'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_client_create.rb:8:in `execute'
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 4299)
+
+
+Started GET "/client" for ::1 at 2023-08-25 08:57:02 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1176)
+
+
+Started PUT "/client/3" for ::1 at 2023-08-25 08:57:24 -0300
+Processing by ClientController#update as */*
+  Parameters: {"id"=>"3", "name"=>"client xxx 3", "email"=>"emaiol xxx 3", "phone"=>"333 xxx", "address"=>"rua xxx 3", "client"=>{"id"=>"3", "name"=>"client xxx 3", "email"=>"emaiol xxx 3", "phone"=>"333 xxx", "address"=>"rua xxx 3"}}
+Completed 422 Unprocessable Entity in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/client" for ::1 at 2023-08-25 08:57:42 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 1176)
+
+
+Started GET "/client" for ::1 at 2023-08-25 09:01:24 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 94ms (Views: 29.3ms | ActiveRecord: 11.2ms | Allocations: 11618)
+
+
+Started PUT "/client/3" for ::1 at 2023-08-25 09:02:15 -0300
+Processing by ClientController#update as */*
+  Parameters: {"id"=>"3", "name"=>"client three", "email"=>"email three", "phone"=>"333", "address"=>"rua 333", "client"=>{"id"=>"3", "name"=>"client three", "email"=>"email three", "phone"=>"333", "address"=>"rua 333"}}
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_client_update.rb:7:in `execute'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_client_update.rb:11:in `execute'
+  [1m[36mClient Update (1.0ms)[0m  [1m[33mUPDATE "clients" SET "name" = $1, "email" = $2, "phone" = $3, "updated" = $4 WHERE "clients"."id" = $5[0m  [["name", "client three"], ["email", "email three"], ["phone", "333"], ["updated", "2023-08-25 12:02:15.917815"], ["id", "3"]]
+  ↳ app/service/service_client_update.rb:11:in `execute'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_client_update.rb:11:in `execute'
+Completed 200 OK in 92ms (Views: 1.6ms | ActiveRecord: 9.8ms | Allocations: 6189)
+
+
+Started GET "/client" for ::1 at 2023-08-25 09:02:18 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY updated DESC[0m
+  ↳ app/controllers/client_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.1ms | Allocations: 1190)
+
+
+Started GET "/sale" for ::1 at 2023-08-25 09:02:23 -0300
+Processing by SaleController#index as */*
+  [1m[36mSale Load (1.4ms)[0m  [1m[34mSELECT "sales".* FROM "sales" ORDER BY updated DESC[0m
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.4ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.1ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.2ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 13]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.6ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.3ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 12]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.2ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 11]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+Completed 200 OK in 147ms (Views: 0.8ms | ActiveRecord: 28.5ms | Allocations: 25494)
+
+
+Started GET "/sale/10" for ::1 at 2023-08-25 09:02:33 -0300
+Processing by SaleController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSale Load (1.0ms)[0m  [1m[34mSELECT "sales".* FROM "sales" WHERE "sales"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:12:in `execute'
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+  [1m[36mSeller Load (1.1ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+  [1m[36mProductsale Load (2.2ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_find.rb:13:in `execute'
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 5.3ms | Allocations: 3851)
+
+
+Started POST "/sale" for ::1 at 2023-08-25 09:03:05 -0300
+Processing by SaleController#create as */*
+  Parameters: {"client_id"=>"1", "seller_id"=>"1", "productsales"=>[{"product_id"=>"1", "quantity"=>1}, {"product_id"=>"1", "quantity"=>1}, {"product_id"=>"2", "quantity"=>2}], "sale"=>{"client_id"=>"1", "seller_id"=>"1"}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_sale_create.rb:16:in `block in execute'
+  [1m[36mClient Load (2.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:16:in `block in execute'
+  [1m[36mSeller Load (1.6ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:16:in `block in execute'
+  [1m[36mSale Create (3.1ms)[0m  [1m[32mINSERT INTO "sales" ("client_id", "seller_id") VALUES ($1, $2) RETURNING "id"[0m  [["client_id", "1"], ["seller_id", "1"]]
+  ↳ app/service/service_sale_create.rb:16:in `block in execute'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:31:in `block in getListProductSales'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:31:in `block in getListProductSales'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:31:in `block in getListProductSales'
+  [1m[36mProductsale Load (1.3ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 14]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mProductsale Create (1.9ms)[0m  [1m[32mINSERT INTO "productsales" ("sale_id", "product_id", "product_name", "price", "quantity") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sale_id", 14], ["product_id", "1"], ["product_name", "product one"], ["price", "123.0"], ["quantity", 1]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mProductsale Create (1.3ms)[0m  [1m[32mINSERT INTO "productsales" ("sale_id", "product_id", "product_name", "price", "quantity") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sale_id", 14], ["product_id", "1"], ["product_name", "product one"], ["price", "123.0"], ["quantity", 1]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mProductsale Create (1.4ms)[0m  [1m[32mINSERT INTO "productsales" ("sale_id", "product_id", "product_name", "price", "quantity") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sale_id", 14], ["product_id", "2"], ["product_name", "product two"], ["price", "222.0"], ["quantity", 2]]
+  ↳ app/service/service_sale_create.rb:18:in `block in execute'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_sale_create.rb:15:in `execute'
+Completed 200 OK in 149ms (Views: 0.3ms | ActiveRecord: 24.8ms | Allocations: 16744)
+
+
+Started GET "/sale" for ::1 at 2023-08-25 09:03:08 -0300
+Processing by SaleController#index as */*
+  [1m[36mSale Load (1.3ms)[0m  [1m[34mSELECT "sales".* FROM "sales" ORDER BY updated DESC[0m
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (2.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.4ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.5ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 14]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.5ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.0ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 13]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (2.5ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (3.3ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 12]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (0.9ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 11]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+Completed 200 OK in 78ms (Views: 1.1ms | ActiveRecord: 17.6ms | Allocations: 14712)
+
+
+Started PUT "/sale/14" for ::1 at 2023-08-25 09:03:55 -0300
+Processing by SaleController#update as */*
+  Parameters: {"client_id"=>"1", "seller_id"=>"1", "productsales"=>[{"product_id"=>"1", "quantity"=>1}, {"product_id"=>"2", "quantity"=>2}, {"product_id"=>"3", "quantity"=>3}], "id"=>"14", "sale"=>{"id"=>"14", "client_id"=>"1", "seller_id"=>"1"}}
+  [1m[36mSale Load (1.1ms)[0m  [1m[34mSELECT "sales".* FROM "sales" WHERE "sales"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:12:in `execute'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/service/service_sale_update.rb:17:in `block in execute'
+  [1m[36mProductsale Delete All (1.5ms)[0m  [1m[31mDELETE FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 14]]
+  ↳ app/service/service_sale_update.rb:17:in `block in execute'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:32:in `block in getListProductSales'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:32:in `block in getListProductSales'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:32:in `block in getListProductSales'
+  [1m[36mProductsale Load (1.5ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 14]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mProductsale Create (1.7ms)[0m  [1m[32mINSERT INTO "productsales" ("sale_id", "product_id", "product_name", "price", "quantity") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sale_id", 14], ["product_id", "1"], ["product_name", "product one"], ["price", "123.0"], ["quantity", 1]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mProductsale Create (2.1ms)[0m  [1m[32mINSERT INTO "productsales" ("sale_id", "product_id", "product_name", "price", "quantity") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sale_id", 14], ["product_id", "2"], ["product_name", "product two"], ["price", "222.0"], ["quantity", 2]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", "3"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mProductsale Create (1.5ms)[0m  [1m[32mINSERT INTO "productsales" ("sale_id", "product_id", "product_name", "price", "quantity") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["sale_id", 14], ["product_id", "3"], ["product_name", "product three"], ["price", "333.0"], ["quantity", 3]]
+  ↳ app/service/service_sale_update.rb:19:in `block in execute'
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:20:in `block in execute'
+  [1m[36mSeller Load (1.8ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_update.rb:20:in `block in execute'
+  [1m[36mSale Update (1.7ms)[0m  [1m[33mUPDATE "sales" SET "updated" = $1 WHERE "sales"."id" = $2[0m  [["updated", "2023-08-25 12:03:55.222321"], ["id", 14]]
+  ↳ app/service/service_sale_update.rb:20:in `block in execute'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/service/service_sale_update.rb:16:in `execute'
+Completed 200 OK in 165ms (Views: 0.4ms | ActiveRecord: 26.0ms | Allocations: 14390)
+
+
+Started GET "/sale" for ::1 at 2023-08-25 09:03:57 -0300
+Processing by SaleController#index as */*
+  [1m[36mSale Load (0.9ms)[0m  [1m[34mSELECT "sales".* FROM "sales" ORDER BY updated DESC[0m
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.4ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.3ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 14]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.4ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 10]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.1ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 13]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mSeller Load (1.4ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "2"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (2.1ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 12]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Client Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mCACHE Seller Load (0.0ms)[0m  [1m[34mSELECT "sellers".* FROM "sellers" WHERE "sellers"."id" = $1 LIMIT $2[0m  [["id", "1"], ["LIMIT", 1]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+  [1m[36mProductsale Load (1.4ms)[0m  [1m[34mSELECT "productsales".* FROM "productsales" WHERE "productsales"."sale_id" = $1[0m  [["sale_id", 11]]
+  ↳ app/service/service_sale_list.rb:12:in `execute'
+Completed 200 OK in 56ms (Views: 1.5ms | ActiveRecord: 13.3ms | Allocations: 14706)
+
+

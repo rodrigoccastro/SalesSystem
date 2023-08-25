@@ -1,5 +1,6 @@
 require 'net/http'
 require 'json'
+require 'httparty'
 
 class View
 
@@ -69,18 +70,13 @@ class View
     end
 
     def get_json_url_post(source, params)
-        resp = Net::HTTP.post_form(URI.parse(source), JSON.parse(params))
-        return JSON.parse(resp.body)
+        response = HTTParty.post(source, :headers => {'cache-control': 'no-cache','content-type': 'application/json'}, :body => params.to_json)
+        return JSON.parse(response.body)
     end
-    
+
     def get_json_url_put(source, params)
-        uri = URI(source)
-        req = Net::HTTP::Put.new(uri)
-        req.set_form_data(params)
-        resp = Net::HTTP.start(uri.hostname, uri.port) do |http|
-            http.request(req)
-        end
-        return JSON.parse(resp.body)
+        response = HTTParty.put(source, :headers => {'cache-control': 'no-cache','content-type': 'application/json'}, :body => params.to_json)
+        return JSON.parse(response.body)
     end
 
 end
